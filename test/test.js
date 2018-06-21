@@ -1,11 +1,13 @@
-var sum = require('../src/Lab1.js');
-var assert = require('assert');
-it('spaces is ok :)', function() {
-	assert.equal(sum.spaces, 5);
-});
-it('words is ok :)', function() {
-	assert.equal(sum.words, 6);
-});
-it('symbols is ok :)', function() {
-	assert.equal(sum.symbols, 3);
+var sum = require("../src/Lab1.js");
+var assert = require("assert");
+describe("count", function() {
+	it("count spaces in the string", function() {
+		assert.equal(sum.spaces("serg esr er ht"), 3);
+	});
+	it("count words in the string", function() {
+		assert.equal(sum.words("srt, ht"), 2);
+	});
+	it("count symbols ( ,.?!-_ ) in the string", function() {
+		assert.equal(sum.symbols("gesr.!!hrt/?srt "), 4);
+	});
 });
