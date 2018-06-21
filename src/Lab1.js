@@ -3,7 +3,11 @@ function countSpaces(str) {
 };
 
 function countWords(str) {
-	return str.split(/\s+\b/).length;
+	var result =  str.split(/\s+\b/).length;
+	if ( (str[0] == " ") || (str.length == 0)) {
+		result -= 1;
+	}
+	return result;
 };
 
 function countSymbols(str) {
@@ -11,8 +15,8 @@ function countSymbols(str) {
 	for (i; i < str.length; i++) {
 		if ( (str[i] == ",")||(str[i] == ".")||(str[i] == "?")||(str[i] == "!")||(str[i] == "-")||(str[i] == "_") ) {
 			result++;
-		};
-	};
+		}
+	}
 	return result;
 };
 
