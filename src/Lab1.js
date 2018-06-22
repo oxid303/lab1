@@ -1,23 +1,20 @@
 function countSpaces(str) {
-	return str.split(" ").length - 1;
+	return str.match(/[ ]/g).length;
 };
 
 function countWords(str) {
-	var result =  str.split(/\s+\b/).length;
-	if ( (str[0] == " ") || (str.length == 0)) {
-		result -= 1;
-	}
+	str = str.replace(/\n/g," ");
+	str = str.replace(/(^\s*)|(\s*$)/g,"");
+	str = str.replace(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g,"");
+	str = str.replace(/[ ]{2,}/g," ");
+
+	var result = str.split(" ").length;
+	if ("") result--;
 	return result;
 };
 
 function countSymbols(str) {
-	var i = 0, result = 0;
-	for (i; i < str.length; i++) {
-		if ( (str[i] == ",")||(str[i] == ".")||(str[i] == "?")||(str[i] == "!")||(str[i] == "-")||(str[i] == "_") ) {
-			result++;
-		}
-	}
-	return result;
+	return str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
 };
 
 module.exports = {

@@ -7,7 +7,7 @@ describe("count", function() {
 	it("count words in the string", function() {
 		assert.equal(sum.words(""), 0);
 	});
-	it("count symbols ( ,.?!-_ ) in the string", function() {
+	it("count symbols in the string", function() {
 		assert.equal(sum.symbols(""), 0);
 	});
 });
