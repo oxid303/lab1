@@ -1,5 +1,6 @@
 function countSpaces(str) {
 	if (str === "") return 0;
+	if (str == null) return 0;
 	return str.match(/[ ]/g).length;
 };
 
