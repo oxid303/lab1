@@ -1,8 +1,10 @@
 function countSpaces(str) {
+	if (str === "") return 0;
 	return str.match(/[ ]/g).length;
 };
 
 function countWords(str) {
+	if (str === "") return 0;	
 	str = str.replace(/\n/g," ");
 	str = str.replace(/(^\s*)|(\s*$)/g,"");
 	str = str.replace(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g,"");
@@ -14,6 +16,7 @@ function countWords(str) {
 };
 
 function countSymbols(str) {
+	if (str === "") return 0;
 	return str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
 };
 
