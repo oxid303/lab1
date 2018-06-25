@@ -16,12 +16,12 @@ describe('Count Spaces', function() {
 
 	describe('Regular Case', function() {
 
-		it('When string is "hello world"', function() {
-			assert.equal(sum.spaces('hello world'), 1);
+		it('When string is "simple text"', function() {
+			assert.equal(sum.spaces('simple text'), 1);
 		});
 
-		it('When string is "enter your string"', function() {
-			assert.equal(sum.spaces(' enter your  string '), 5);
+		it('When string is " random  spaces  "', function() {
+			assert.equal(sum.spaces(' random  spaces  '), 5);
 		});
 	});
 
