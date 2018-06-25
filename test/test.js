@@ -6,8 +6,4 @@ describe("count", function() {
 	it("count words in the string", function() {
 		assert.equal(sum.words(""), 0);
 	});
-
-	it("count symbols in the string", function() {
-		assert.equal(sum.symbols(""), 0);
-	});
 });

@@ -21,19 +21,11 @@ describe('Count Spaces', function() {
 		});
 
 		it('When string is "enter your string"', function() {
-			assert.equal(sum.spaces('enter your string'), 2);
+			assert.equal(sum.spaces(' enter your  string '), 5);
 		});
 	});
 
 	describe('Not String Case', function() {
-
-		it('When param is Undefined', function() {
-			assert.equal(sum.spaces(undefined), 0);
-		});
-
-		it('When param is Number', function() {
-			assert.equal(sum.spaces(100500), 0);
-		});
 
 		it('When param is True', function() {
 			assert.equal(sum.spaces(true), 0);
@@ -43,12 +35,16 @@ describe('Count Spaces', function() {
 			assert.equal(sum.spaces(false), 0);
 		});
 
-		it('When param is Object', function() {
-			assert.equal(sum.spaces({}), 0);
+		it('When param is Undefined', function() {
+			assert.equal(sum.spaces(undefined), 0);
 		});
 
-		it('When param is Massive', function() {
-			assert.equal(sum.spaces([]), 0);
+		it('When param is Number', function() {
+			assert.equal(sum.spaces(100500), 0);
+		});
+
+		it('When param is Object', function() {
+			assert.equal(sum.spaces({}), 0);
 		});
 
 		it('When param is Function', function() {
