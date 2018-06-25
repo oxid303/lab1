@@ -16,12 +16,12 @@ describe('Count Words', function() {
 
 	describe('Regular Case', function() {
 
-		it('When string is ""', function(){
-			assert.equal(sum.words(''), 0);
+		it('When string is "medusa\'s path medusa`s path medusa-path"', function(){
+			assert.equal(sum.words('medusa\'s path medusa`s path medusa-path'), 6);
 		});
 
-		it('When string is ""', function(){
-			assert.equal(sum.words(''), 0);
+		it('When string is "  random string.with   wrong,\npunctuation  "', function(){
+			assert.equal(sum.words('  random string.with   wrong,\npunctuation  '), 5);
 		});
 	});
 

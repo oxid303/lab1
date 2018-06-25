@@ -9,12 +9,9 @@ function countWords(str) {
 	if (str === '') return 0;
 	str = str.replace(/\n/g,' ');
 	str = str.replace(/(^\s*)|(\s*$)/g,'');
-	str = str.replace(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g,'');
+	str = str.replace(/[.,/|\?!@#№$%^&*(){}[\]_+=~;:"-]/g,' ');
 	str = str.replace(/[ ]{2,}/g,' ');
-
-	var result = str.split(' ').length;
-	if ('') result--;
-	return result;
+	return str.split(' ').length;
 };
 
 function countSymbols(str) {
