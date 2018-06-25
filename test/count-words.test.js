@@ -20,8 +20,12 @@ describe('Count Words', function() {
 			assert.equal(sum.words('medusa\'s path medusa`s path medusa-path'), 6);
 		});
 
-		it('When string is "  random string.with   wrong,\npunctuation  "', function(){
-			assert.equal(sum.words('  random string.with   wrong,\npunctuation  '), 5);
+		it('When string is "  random text.with   wrong , punctuation  "', function(){
+			assert.equal(sum.words('  random text.with   wrong , punctuation  '), 5);
+		});
+
+		it('When string is "it それ 它 זה" آی تی هذا', function(){
+			assert.equal(sum.words('it それ 它 זה" آی تی هذا'), 7);
 		});
 	});
 
