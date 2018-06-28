@@ -10,12 +10,12 @@ function countSpaces(str) {
 };
 
 function countWords(str) {
-	if ( !_.isString(str) || _.isEmpty(str) ) return 0;
+	if( checkEmpty(str) ) return 0;
 	return str.split(/\s+\b/).length;
 };
 
 function countSymbols(str) {
-	if ( !_.isString(str) || _.isEmpty(str) ) return 0;
+	if( checkEmpty(str) ) return 0;
 	return str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
 };
 
