@@ -16,16 +16,16 @@ describe('Count Words', function() {
 
 	describe('Regular Case', function() {
 
-		it('When string is "medusa\'s path medusa`s path medusa-path"', function(){
-			assert.equal(sum.words('medusa\'s path medusa`s path medusa-path'), 6);
+		it('When string is "word"', function(){
+			assert.equal(sum.words('word'), 1);
 		});
 
-		it('When string is "  random text.with   wrong , punctuation  "', function(){
-			assert.equal(sum.words('  random text.with   wrong , punctuation  '), 5);
+		it('When string is "text for example"', function(){
+			assert.equal(sum.words('text for example'), 3);
 		});
 
-		it('When string is "it それ 它 זה" آی تی هذا', function(){
-			assert.equal(sum.words('it それ 它 זה" آی تی هذا'), 7);
+		it('When string is "text for example, with punctuation marks."', function(){
+			assert.equal(sum.words('text for example, with punctuation marks.'), 6);
 		});
 	});
 
