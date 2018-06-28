@@ -1,26 +1,28 @@
-var _ = require('lodash');
+'use strict';
 
-function checkEmpty(str) {
-	if ( !_.isString(str) || _.isEmpty(str) ) return true;	
+var checkNoString = require('../utils/check-no-string.js');
+var checkEmpty = require('../utils/check-empty.js');
+
+class Counts {
+
+	constructor() {}
+
+	countSpaces(str) {
+		if ( checkNoString(str) || checkEmpty(str) ) return 0;
+		return str.match(/[ ]/g).length;
+	}
+
+	countWords(str) {
+		if ( checkNoString(str) || checkEmpty(str) ) return 0;
+		return str.split(/\s+\b/).length;
+	}
+
+	countSymbols(str) {
+		if ( checkNoString(str) || checkEmpty(str) ) return 0;
+		return str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
+	}
 }
 
-function countSpaces(str) {
-	if( checkEmpty(str) ) return 0;
-	return str.match(/[ ]/g).length;
-};
+let counts = new Counts();
 
-function countWords(str) {
-	if( checkEmpty(str) ) return 0;
-	return str.split(/\s+\b/).length;
-};
-
-function countSymbols(str) {
-	if( checkEmpty(str) ) return 0;
-	return str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
-};
-
-module.exports = {
-	spaces: countSpaces,
-	words: countWords,
-	symbols: countSymbols,
-};
+module.exports = counts;
