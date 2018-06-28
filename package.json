@@ -1,5 +1,9 @@
 {
-  "dependencies": {
-    "mocha": "^5.2.0"
-  }
+	"dependencies": {
+		"mocha": "^5.2.0"
+	},
+
+	"scripts": {
+		"test": "mocha"
+	}
 }
