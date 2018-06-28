@@ -2,7 +2,7 @@ var _ = require('lodash');
 
 function checkEmpty(str) {
 	if ( !_.isString(str) || _.isEmpty(str) ) return true;	
-}
+};
 
 function countSpaces(str) {
 	if( checkEmpty(str) ) return 0;
