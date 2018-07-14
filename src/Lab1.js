@@ -5,24 +5,24 @@ var checkEmpty = require('../utils/check-empty.js');
 
 class Counts {
 
-	constructor() {}
-
-	countSpaces(str) {
-		if ( checkNoString(str) || checkEmpty(str) ) return 0;
-		return str.match(/[ ]/g).length;
+	constructor(str) {
+		this.str = str;
 	}
 
-	countWords(str) {
-		if ( checkNoString(str) || checkEmpty(str) ) return 0;
-		return str.split(/\s+\b/).length;
+	countSpaces() {
+		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
+		return this.str.match(/[ ]/g).length;
 	}
 
-	countSymbols(str) {
-		if ( checkNoString(str) || checkEmpty(str) ) return 0;
-		return str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
+	countWords() {
+		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
+		return this.str.split(/\s+\b/).length;
+	}
+
+	countSymbols() {
+		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
+		return this.str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
 	}
 }
 
-let counts = new Counts();
-
-module.exports = counts;
+module.exports = Counts;
