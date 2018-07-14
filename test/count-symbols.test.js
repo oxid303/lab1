@@ -1,54 +1,64 @@
-var sum = require('../src/Lab1.js');
+var Counts = require('../src/Lab1.js');
 var assert = require('assert');
 
-describe('Count Symbols', function() {
+describe.only('Count Symbols', function() {
 
 	describe('Zero Case', function() {
 
 		it('Check Null', function(){
-			assert.equal(sum.countSymbols(), 0);
+			const target = new Counts();
+			assert.equal(target.countSymbols(), 0);
 		});
 
 		it('When string is empty', function(){
-			assert.equal(sum.countSymbols(''), 0);
+			const target = new Counts('');
+			assert.equal(target.countSymbols(), 0);
 		});
 	});
 
 	describe('Regular Case', function() {
 
 		it('When string is "Variable symbols, like !№*_"', function(){
-			assert.equal(sum.countSymbols('Variable symbols, like !№*_'), 5);
+			const target = new Counts('Variable symbols, like !№*_');
+			assert.equal(target.countSymbols(), 5);
 		});
 
 		it('When string is "More variables @,.^/%$"', function(){
-			assert.equal(sum.countSymbols('More variables @,.^/%$'), 7);
+			const target = new Counts('More variables @,.^/%$');
+			assert.equal(target.countSymbols(), 7);
 		});
 	});
 
 	describe('Not String Case', function() {
 
 		it('When param is True', function(){
-			assert.equal(sum.countSymbols(true), 0);
+			const target = new Counts(true);
+			assert.equal(target.countSymbols(), 0);
 		});
 
 		it('When param is False', function(){
-			assert.equal(sum.countSymbols(false), 0);
+			const target = new Counts(false);
+			assert.equal(target.countSymbols(), 0);
 		});
 
 		it('When param is Undefined', function(){
-			assert.equal(sum.countSymbols(undefined), 0);
+			const target = new Counts(undefined);
+			assert.equal(target.countSymbols(), 0);
 		});
 
 		it('When param is Number', function(){
-			assert.equal(sum.countSymbols(100500), 0);
+			const target = new Counts(100500);
+			assert.equal(target.countSymbols(), 0);
 		});
 
 		it('When param is Object', function(){
-			assert.equal(sum.countSymbols({}), 0);
+			const target = new Counts({});
+			assert.equal(target.countSymbols(), 0);
 		});
 
 		it('When param is Function', function(){
-			assert.equal(sum.countSymbols(function(){}), 0);
+			const target = new Counts(function(){});
+			assert.equal(target.countSymbols(), 0);
 		});
 	});
 });
