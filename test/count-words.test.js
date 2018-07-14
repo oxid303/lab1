@@ -1,7 +1,7 @@
 var Counts = require('../src/Lab1.js');
 var assert = require('assert');
 
-describe.only('Count Words', function() {
+describe('Count Words', function() {
 
 	describe('Zero Case', function() {
 

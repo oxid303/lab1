@@ -1,7 +1,7 @@
 var Counts = require('../src/Lab1.js');
 var assert = require('assert');
 
-describe.only('Count Symbols', function() {
+describe('Count Symbols', function() {
 
 	describe('Zero Case', function() {
 

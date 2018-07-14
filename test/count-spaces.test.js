@@ -1,7 +1,7 @@
 const Counts = require('../src/Lab1.js');
 var assert = require('assert');
 
-describe.only('Count Spaces', function() {
+describe('Count Spaces', function() {
 
 	describe('Zero Case', function() {
 
