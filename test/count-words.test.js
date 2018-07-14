@@ -1,4 +1,4 @@
-var sum = require('../src/Lab1.js');
+var Counts = require('../src/Lab1.js');
 var assert = require('assert');
 
 describe('Count Words', function() {
@@ -6,53 +6,64 @@ describe('Count Words', function() {
 	describe('Zero Case', function() {
 
 		it('Check Null', function(){
-			assert.equal(sum.words(), 0);
+			const target = new Counts();
+			assert.equal(target.countWords(), 0);
 		});
 
 		it('When string is empty', function(){
-			assert.equal(sum.words(''), 0);
+			const target = new Counts('');
+			assert.equal(target.countWords(), 0);
 		});
 	});
 
 	describe('Regular Case', function() {
 
 		it('When string is "word"', function(){
-			assert.equal(sum.words('word'), 1);
+			const target = new Counts('word');
+			assert.equal(target.countWords(), 1);
 		});
 
 		it('When string is "text for example"', function(){
-			assert.equal(sum.words('text for example'), 3);
+			const target = new Counts('text for example');
+			assert.equal(target.countWords(), 3);
 		});
 
 		it('When string is "text for example, with punctuation marks."', function(){
-			assert.equal(sum.words('text for example, with punctuation marks.'), 6);
+			const target = new Counts('text for example, with punctuation marks.');
+			assert.equal(target.countWords(), 6);
 		});
 	});
 
 	describe('Not String Case', function() {
 
 		it('When param is True', function(){
-			assert.equal(sum.words(true), 0);
+			const target = new Counts(true);
+			assert.equal(target.countWords(), 0);
 		});
 
 		it('When param is False', function(){
-			assert.equal(sum.words(false), 0);
+			const target = new Counts(false);
+			assert.equal(target.countWords(), 0);
 		});
 
 		it('When param is Undefined', function(){
-			assert.equal(sum.words(undefined), 0);
+			const target = new Counts(undefined);
+			assert.equal(target.countWords(), 0);
 		});
 
 		it('When param is Number', function(){
-			assert.equal(sum.words(100500), 0);
+			const target = new Counts(100500);
+			assert.equal(target.countWords(), 0);
 		});
 
 		it('When param is Object', function(){
-			assert.equal(sum.words({}), 0);
+			const target = new Counts({});
+			assert.equal(target.countWords(), 0);
 		});
 
 		it('When param is Function', function(){
-			assert.equal(sum.words(function(){}), 0);
+			const target = new Counts(function(){});
+			assert.equal(target.countWords(), 0);
 		});
 	});
 });
