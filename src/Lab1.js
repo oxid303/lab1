@@ -11,7 +11,7 @@ class Counts {
 
 	countSpaces() {
 		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
-		return this.str.match(/[ ]/g).length;
+		return this.str.split(/[ ]/g).length - 1;
 	}
 
 	countWords() {
@@ -21,7 +21,7 @@ class Counts {
 
 	countSymbols() {
 		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
-		return this.str.match(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length;
+		return this.str.split(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length -1;
 	}
 }
 
