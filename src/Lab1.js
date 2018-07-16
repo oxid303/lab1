@@ -10,7 +10,7 @@ class Counts {
 	}
 
 	get check() {
-		return checkNoString(this.str) || checkEmpty(this.str) ? 1 : 0;
+		return checkNoString(this.str) || checkEmpty(this.str);
 	}
 
 	countSpaces() {
