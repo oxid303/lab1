@@ -6,12 +6,12 @@ describe('Count Spaces', function() {
 	describe('Zero Case', function() {
 
 		it('Check Null', function() {
-		const target = new Counts();
+			const target = new Counts();
 			assert.equal(target.countSpaces(), 0);
 		});
 
 		it('When string is empty', function() {
-		const target = new Counts('');
+			const target = new Counts('');
 			assert.equal(target.countSpaces(), 0);
 		});
 	});
@@ -32,32 +32,32 @@ describe('Count Spaces', function() {
 	describe('Not String Case', function() {
 
 		it('When param is True', function() {
-		const target = new Counts(true);
+			const target = new Counts(true);
 			assert.equal(target.countSpaces(), 0);
 		});
 
 		it('When param is False', function() {
-		const target = new Counts(false);
+			const target = new Counts(false);
 			assert.equal(target.countSpaces(), 0);
 		});
 
 		it('When param is Undefined', function() {
-		const target = new Counts(undefined);
+			const target = new Counts(undefined);
 			assert.equal(target.countSpaces(), 0);
 		});
 
 		it('When param is Number', function() {
-		const target = new Counts(100500);
+			const target = new Counts(100500);
 			assert.equal(target.countSpaces(), 0);
 		});
 
 		it('When param is Object', function() {
-		const target = new Counts({});
+			const target = new Counts({});
 			assert.equal(target.countSpaces(), 0);
 		});
 
 		it('When param is Function', function() {
-		const target = new Counts(function(){});
+			const target = new Counts(function(){});
 			assert.equal(target.countSpaces(), 0);
 		});
 	});
