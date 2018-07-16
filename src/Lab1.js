@@ -9,19 +9,20 @@ class Counts {
 		this.str = str;
 	}
 
+	get check() {
+		return checkNoString(this.str) || checkEmpty(this.str) ? 1 : 0;
+	}
+
 	countSpaces() {
-		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
-		return this.str.split(/[ ]/g).length - 1;
+		return new Counts(this.str).check ? 0 : this.str.split(/[ ]/g).length - 1;
 	}
 
 	countWords() {
-		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
-		return this.str.split(/\s+\b/).length;
+		return new Counts(this.str).check ? 0 : this.str.split(/\s+\b/).length;
 	}
 
 	countSymbols() {
-		if ( checkNoString(this.str) || checkEmpty(this.str) ) return 0;
-		return this.str.split(/[.,/|\?!@#№$%^&*(){}[\]_+=`~;:'"-]/g).length -1;
+		return new Counts(this.str).check ? 0 : this.str.split(/[^ \w]|[_]/g).length -1;
 	}
 }
 
