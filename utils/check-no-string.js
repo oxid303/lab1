@@ -3,8 +3,7 @@
 var _ = require('lodash');
 
 function checkNoString (str) {
-	if ( !_.isString(str) ) return true;
-	return false;
+  return !_.isString(str);
 };
 
 module.exports = checkNoString;
