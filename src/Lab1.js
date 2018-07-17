@@ -14,15 +14,18 @@ class Counts {
   }
 
   countSpaces() {
-    return new Counts(this.str).check ? 0 : this.str.split(/[ ]/g).length - 1;
+    if (this.check) return 0;
+    return this.str.split(/\s/g).length - 1;
   }
 
   countWords() {
-    return new Counts(this.str).check ? 0 : this.str.split(/\s+\b/).length;
+    if (this.check) return 0;
+    return this.str.split(/\s+\b/).length;
   }
 
   countSymbols() {
-    return new Counts(this.str).check ? 0 : this.str.split(/[^ \w]|[_]/g).length -1;
+    if (this.check) return 0;
+    return this.str.split(/[^ \w]|[_]/g).length -1;
   }
 }
 
